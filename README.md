@@ -7,14 +7,16 @@
 ## ✨ Features
 
 - Chess flashcards written directly in Markdown (`chess-card` blocks);
-- Move sequences with **`BestLine`** (player moves at even indices, opponent moves at odd indices);
-- **Inline comments** per move `{…}` and a **general note** with `Note`;
+- Move sequences with **`bestLine`** (player moves at even indices, opponent moves at odd indices);
+- **Inline comments** per move `{…}` and a **general note** with `note`;
 - Spaced Repetition System (SRS) with progress tracked by **Id**;
 - Statistics panel and dedicated training sessions.
 
 ---
 
 ## 📦 Installation
+
+### From GitHub repository
 
 1. Download the latest release from **Releases**;
 2. Copy the folder `obsidian-chess-trainer` into `.obsidian/plugins/` in your vault;
@@ -29,37 +31,36 @@
 Use the `chess-card` block inside a note:
 
 ```chess-card
-Name: Attack on f7 with Ng5
-FEN: r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 4
-BestLine:
+name: Attack on f7 with Ng5
+fen: r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 4
+bestLine:
   - Ng5 {Targets f7}
   - d5 {Black counters in the center}
   - exd5 {Opens lines}
   - Na5 {Attacks the bishop on c4}
-Note: Typical pattern exploiting the f7 weakness.
+note: Typical pattern exploiting the f7 weakness.
 ```
 
 #### Fields
 
-- **Name** _(required)_: human-readable name for the card.
+- **name** _(required)_: human-readable name for the card.
     - **Does not need to be unique**; useful for organization (search, filters, themes);
-- **FEN** _(required)_: starting position;
-- **BestLine** _(required)_: ordered list of moves;
+- **fen** _(required)_: starting position;
+- **bestLine** _(required)_: ordered list of moves;
     - Even indices → your moves;
     - Odd indices → opponent moves;
     - Optional inline comments with `{…}` after each move;
-- **Note** _(optional)_: general comment about the problem.
+- **note** _(optional)_: general comment about the problem.
 
 #### Identity and progress
 
 - **Id** _(optional for you; required internally)_: unique identifier for the card;
-    - If **not** provided, the plugin **generates a UUID** on first load and persists it;
-    - You **may** declare one manually to preserve progress across vaults/devices.
+    - If **not** provided, the plugin **generates a ID** and persists it.
 
-Example with explicit Id:
+Example with explicit id:
 
 ```chess-card
-Id: 8a7f4f5e-5c4d-4e1a-9a6c-1e2b3c4d5e6f
+id: 1
 Name: Basic opposition endgame
 FEN: 8/8/8/2k5/2P5/8/2K5/8 w - - 0 1
 BestLine:
@@ -69,6 +70,8 @@ BestLine:
   - Kd3 {Maintain opposition}
 Note: Opposition technique in K+P vs K.
 ```
+
+> You don't need to worry about unique IDs. The plugin takes care of that for you.
 
 ## 🎯 Training
 
