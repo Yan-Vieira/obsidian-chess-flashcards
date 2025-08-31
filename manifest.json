@@ -1,11 +1,10 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
-	"version": "1.0.0",
+	"id": "obsidian-chess-flashcards",
+	"name": "Chess Flashcards",
+	"version": "0.1.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Train chess patterns inside Obsidian with interactive flashcards and spaced repetition, inspired by the Chessable method.",
+	"author": "Yan Vieira de Macedo",
+	"authorUrl": "https://github.com/Yan-Vieira",
 	"isDesktopOnly": false
 }
